@@ -1,10 +1,11 @@
 import React from 'react'
 import ExpenseItem from './ExpenseItem'
 import "./Expenses.css"
+
 const Expenses = ({ items }) => {
     return (
         <div className='expenses'>
-         
+        
             <ExpenseItem
                 title={items[0].title}
                 amount={items[0].amount}
@@ -29,4 +30,4 @@ const Expenses = ({ items }) => {
     )
 }
 
-export default Expenses
+export default Expenses;
