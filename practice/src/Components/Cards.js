@@ -1,8 +1,17 @@
 import React from 'react'
+import Card from './Card'
 
-const Cards = () => {
+const Cards = ({concepts}) => {
   return (
-    <div>
+    <div className='cards-container'>
+    {
+      concepts.map((concept)=>{
+        return (
+          <Card concept={concept}/>
+        )
+      })
+
+    }
       
     </div>
   )

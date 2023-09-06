@@ -55,7 +55,7 @@ header p {
   padding: 1.5rem;
   border-radius: 6px;
   box-shadow: 0 2px 20px rgba(234, 78, 240, 0.2);
-  width: 33%;
+  width: 80%;
   transition: all 0.2s
 }
 
@@ -81,4 +81,22 @@ header p {
   margin: 0;
   text-align: center;
   font-size: 0.85rem;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+
+}
+.card{
+display: flex;
+/* flex-direction: ; */
+
+}
+.cards-container
+{
+  display: flex;
+
+
 }
