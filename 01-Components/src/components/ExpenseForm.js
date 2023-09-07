@@ -1,33 +1,33 @@
 import React, { useState } from 'react'
 import "./ExpenseForm.css"
 
-const ExpenseForm = () => {
-    const[addexpense , setAddExpense] = useState({
-        title:"",
-        amount:"",
-        date:"",
-
+const ExpenseForm = (props) => {
+    const [addexpense, setAddExpense] = useState({
+        title: "",
+        amount: "",
+        date: "",
     });
 
-    function changeHandler(e){
-        setAddExpense((prev)=>{
+    function changeHandler(e) {
+        setAddExpense((prev) => {
             return {
                 ...prev,
-                [e.target.name]:e.target.value,
+                [e.target.name]: e.target.value,
             }
-
         })
-
     }
 
-    function submitHandler(e){
+    function submitHandler(e) {
         e.preventDefault();
-        console.log(addexpense);
-        // setAddExpense(e.target.value)
-        // e.target.reset();
-
+        // console.log(addexpense);
+        props.onSaveData(addexpense);
+        setAddExpense({
+            title: "",
+            amount: "",
+            date: "",
+        });
     }
-  
+
 
 
 
@@ -38,15 +38,21 @@ const ExpenseForm = () => {
                 <div className='new-expense__controls'>
                     <div className='new-expense__control'>
                         <label htmlFor="">Title</label>
-                        <input type="text" name="title" value={addexpense.title} id=""  onChange={changeHandler}/>
+                        <input
+                        required
+                         type="text" name="title" value={addexpense.title} id="" onChange={changeHandler} />
                     </div>
                     <div className="new-expense__control">
                         <label htmlFor="">Amount</label>
-                        <input type="number" name="amount" value={addexpense.amount}  min="0.01" step={"0.01"} onChange={changeHandler} />
+                        <input 
+                        required
+                        type="number" name="amount" value={addexpense.amount} min="0.01" step={"0.01"} onChange={changeHandler} />
                     </div>
                     <div className="new-expense__control">
                         <label htmlFor="">Date</label>
-                        <input type="date" name="date" value={addexpense.date} min="2019-01-01" max="2022-12-31" onChange={changeHandler} />
+                        <input
+                        required
+                         type="date" name="date" value={addexpense.date} min="2019-01-01" max="2022-12-31" onChange={changeHandler} />
                     </div>
                 </div>
                 <div className='new-expense__actions'>
