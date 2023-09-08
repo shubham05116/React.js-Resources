@@ -4,11 +4,13 @@ import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalLi
 import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
 import './App.css';
 
+const intialdata =[
+  { text: 'Do all exercises!', id: 'g1' },
+  { text: 'Finish the course!', id: 'g2' }
+
+]
 const App = () => {
-  const [courseGoals, setCourseGoals] = useState([
-    { text: 'Do all exercises!', id: 'g1' },
-    { text: 'Finish the course!', id: 'g2' }
-  ]);
+  const [courseGoals, setCourseGoals] = useState(intialdata);
 
   const addGoalHandler = enteredText => {
     setCourseGoals(prevGoals => {
