@@ -30,7 +30,6 @@ function App() {
   return (
     <div className='main-container'>
       <Header keyConceptsImage={keyConceptsImage} />
-
       <Cards concepts={concepts} />
 
     </div>

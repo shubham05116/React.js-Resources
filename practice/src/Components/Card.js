@@ -10,7 +10,6 @@ const Card = ({concept}) => {
           <p>{concept.description}</p>
         </li>
       </ul>
-      
     </div>
   )
 }
